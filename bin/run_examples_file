@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "active_record_examples_runner"
+
+path = ARGV[0]
+ActiveRecordExamplesRunner.run_file(path)
