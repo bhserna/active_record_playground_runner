@@ -11,10 +11,4 @@ loader.setup
 
 module ActiveRecordExamplesRunner
   class Error < StandardError; end
-
-  def self.run_file(path)
-    code = File.read(path)
-    runner = FileRunner.new(path) { eval(code) }
-    runner.setup.run.destroy
-  end
 end
