@@ -88,16 +88,13 @@ With this tool I would be able to create examples with different schemas without
 Add this line to your project's Gemfile:
 
 ```ruby
-gem 'active_record_playground_runner'
+gem 'active_record_playground_runner', "~> 0.1.0", github: "bhserna/active_record_playground_runner", branch: "main"
 ```
 
 And then execute:
 
     $ bundle install
-
-Or install it yourself as:
-
-    $ gem install active_record_playground_runner
+   
 
 ## Development
 
