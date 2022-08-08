@@ -4,7 +4,7 @@ A tool for to run active record examples.
 
 This will help you play with Active Record and Postgres, without the thinking in the database setup.
 
-You will be able to declare, schema, models, seeds and examples it just one file, like this:
+You will be able to declare, schema, models, seeds and examples in just one file, like this:
 
 
 ```ruby
