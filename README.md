@@ -1,12 +1,83 @@
-# ActiveRecordPlaygroundRunner
+# Active Record Playground Runner
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/active_record_playground_runner`. To experiment with that code, run `bin/console` for an interactive prompt.
+A tool for to run active record examples.
 
-TODO: Delete this and the text above, and describe your gem
+This will help you play with Active Record and Postgres, without the thinking in the database setup.
+
+You will be able to declare, schema, models, seeds and examples it just one file, like this:
+
+
+```ruby
+schema do
+  create_table :posts do |t|
+    t.string :title
+    t.text :body
+  end
+
+  create_table :comments do |t|
+    t.text :body
+    t.integer :post_id
+  end
+
+  add_index :comments, :post_id
+end
+
+models do
+  class Post < ActiveRecord::Base
+    has_many :comments
+  end
+
+  class Comment < ActiveRecord::Base
+    belongs_to :post
+  end
+end
+
+seeds do
+  posts = create_list(Post, count: 10) do
+    {
+      title: FFaker::CheesyLingo.title,
+      body: FFaker::CheesyLingo.paragraph
+    }
+  end
+
+  create_list_for_each_record(Comment, records: posts, count: 20) do |post|
+    {
+      post_id: post.id,
+      body: FFaker::CheesyLingo.sentence
+    }
+  end
+end
+
+example "first" do
+  Post.includes(:comments).limit(5).map do |post|
+    puts post.comments.count
+  end
+end
+
+example "second" do
+  Post.includes(:comments).limit(5).map do |post|
+    puts post.comments.size
+  end
+end
+```
+
+And the run it with:
+
+```
+bundle exec run_playground file_name.rb
+```
+
+And it will:
+
+* Create the database with a random name
+* Load the schema
+* Run the seeds
+* Run the examples with a nice format and with the logger turned on.
+* Drop the database
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your project's Gemfile:
 
 ```ruby
 gem 'active_record_playground_runner'
@@ -20,19 +91,15 @@ Or install it yourself as:
 
     $ gem install active_record_playground_runner
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Then, run `bin/run_playground examples/00_example.rb` to run test example.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/active_record_playground_runner.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bhserna/active_record_playground_runner.
 
 ## License
 
