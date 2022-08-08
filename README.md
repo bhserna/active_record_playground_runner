@@ -75,6 +75,14 @@ And it will:
 * Run the examples with a nice format and with the logger turned on.
 * Drop the database
 
+## Why this tool?
+
+For my ebook [Avoid n+1 queries on rails](https://bhserna.com/avoid-n-plus-1-queries-on-rails.html) I prepared a set of examples for each chapter using the first version of my [Active Record Playground](https://github.com/bhserna/active_record_playground), it was a template to help in the setup of an environment with Active Record.
+
+But is hard to write a lot of examples with the same database schema, and is hard to setup a project for each schema.
+
+With this tool I would be able to create examples with different schemas without setting up a project directory. Making it easier for me to create more and more diverse examples. And also helping the students to focus just on the thing they want to learn instead of the project setup.
+
 ## Installation
 
 Add this line to your project's Gemfile:
