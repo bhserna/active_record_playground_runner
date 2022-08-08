@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "active_record_examples_runner"
+require "active_record_playground_runner"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

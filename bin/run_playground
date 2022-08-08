@@ -2,9 +2,9 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "active_record_examples_runner"
+require "active_record_playground_runner"
 
 path = ARGV[0]
 code = File.read(path)
-runner = ActiveRecordExamplesRunner::FileRunner.new(path) { eval(code) }
+runner = ActiveRecordPlaygroundRunner::Playground.new(path) { eval(code) }
 runner.setup.run.destroy

@@ -1,4 +1,4 @@
-module ActiveRecordExamplesRunner::Renderer
+module ActiveRecordPlaygroundRunner::Renderer
   def render(title, &block)
     puts
     puts title

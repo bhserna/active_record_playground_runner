@@ -1,6 +1,6 @@
-class ActiveRecordExamplesRunner::FileRunner
-  include ActiveRecordExamplesRunner::Renderer
-  include ActiveRecordExamplesRunner::SeedsHelpers
+class ActiveRecordPlaygroundRunner::Playground
+  include ActiveRecordPlaygroundRunner::Renderer
+  include ActiveRecordPlaygroundRunner::SeedsHelpers
 
   attr_reader :uuid, :name
 
@@ -24,7 +24,7 @@ class ActiveRecordExamplesRunner::FileRunner
   end
 
   def example(name, &block)
-    @examples << ActiveRecordExamplesRunner::Example.new(name, &block)
+    @examples << ActiveRecordPlaygroundRunner::Example.new(name, &block)
   end
 
   def setup

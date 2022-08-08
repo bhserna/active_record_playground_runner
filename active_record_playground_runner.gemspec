@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative "lib/active_record_examples_runner/version"
+require_relative "lib/active_record_playground_runner/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "active_record_examples_runner"
-  spec.version       = ActiveRecordExamplesRunner::VERSION
+  spec.name          = "active_record_playground_runner"
+  spec.version       = ActiveRecordPlaygroundRunner::VERSION
   spec.authors       = ["Benito horacio Serna Sandoval"]
   spec.email         = ["bhserna@gmail.com"]
 
   spec.summary       = "A tool for to run active record examples"
-  spec.homepage      = "https://github.com/bhserna/active_record_examples_runner"
+  spec.homepage      = "https://github.com/bhserna/active_record_playground_runner"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
   end
   spec.bindir        = "bin"
-  spec.executables   << "run_examples_file"
+  spec.executables   << "run_playground"
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem

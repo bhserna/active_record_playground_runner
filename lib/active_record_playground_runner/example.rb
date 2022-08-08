@@ -1,5 +1,5 @@
-class ActiveRecordExamplesRunner::Example
-  include ActiveRecordExamplesRunner::Renderer
+class ActiveRecordPlaygroundRunner::Example
+  include ActiveRecordPlaygroundRunner::Renderer
 
   def initialize(name, &block)
     @name = name

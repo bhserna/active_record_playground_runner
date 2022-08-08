@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in active_record_examples_runner.gemspec
+# Specify your gem's dependencies in active_record_playground_runner.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

@@ -1,4 +1,4 @@
-module ActiveRecordExamplesRunner::SeedsHelpers
+module ActiveRecordPlaygroundRunner::SeedsHelpers
   def create_list(klass, count:, &block)
     records_data = count.times.map(&block)
     insert_records(klass, records_data)

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    active_record_examples_runner (0.1.0)
+    active_record_playground_runner (0.1.0)
       activerecord (~> 7.0)
       activesupport (~> 7.0)
       ffaker (~> 2.21)
@@ -50,7 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_record_examples_runner!
+  active_record_playground_runner!
   rake (~> 13.0)
   rspec (~> 3.0)
 
