@@ -4,7 +4,7 @@ A tool for to run active record examples.
 
 This will help you play with Active Record and Postgres, without the thinking in the database setup.
 
-You will be able to declare, schema, models, seeds and examples it just one file, like this:
+You will be able to declare, schema, models, seeds and examples in just one file, like this:
 
 
 ```ruby
@@ -90,16 +90,13 @@ It makes it easier to create more and more diverse examples. And also helping th
 Add this line to your project's Gemfile:
 
 ```ruby
-gem 'active_record_playground_runner'
+gem 'active_record_playground_runner', "~> 0.1.0", github: "bhserna/active_record_playground_runner", branch: "main"
 ```
 
 And then execute:
 
     $ bundle install
-
-Or install it yourself as:
-
-    $ gem install active_record_playground_runner
+   
 
 ## Development
 
