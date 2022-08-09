@@ -43,3 +43,19 @@ example "second" do
     puts post.comments.size
   end
 end
+
+example do
+  Post.includes(:comments).limit(5).map do |post|
+    puts post.comments.length
+  end
+end
+
+example do
+  class Post < ActiveRecord::Base
+    has_one :latest_comment, -> { order(id: :desc) }, class_name: "Comment"
+  end
+
+  Post.preload(:latest_comment).limit(5).map do |post|
+    puts post.latest_comment.body
+  end
+end

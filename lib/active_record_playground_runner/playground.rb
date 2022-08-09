@@ -24,8 +24,9 @@ module ActiveRecordPlaygroundRunner
       @models = block
     end
 
-    def example(name, &block)
-      @examples << Example.new(name, &block)
+    def example(name = nil, &block)
+      index = @examples.count + 1
+      @examples << Example.new(index, name, &block)
     end
 
     def setup
