@@ -98,6 +98,10 @@ And then execute:
     $ bundle install
    
 
+## How to use it
+
+Read more on: https://bhserna.com/active-record-playground-runner-introduction.html
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
