@@ -69,14 +69,26 @@ module ActiveRecordPlaygroundRunner
 
     def create_schema
       ActiveRecord::Schema.define(version: 1, &@schema)
+    rescue StandardError => e
+      render "Error creating schema:" do
+        puts e
+      end
     end
 
     def load_models
       @models.call
+    rescue StandardError => e
+      render "Error loading models:" do
+        puts e
+      end
     end
 
     def run_seeds
       instance_exec(&@seeds)
+    rescue StandardError => e
+      render "Error running seeds:" do
+        puts e
+      end
     end
 
     def run_examples
