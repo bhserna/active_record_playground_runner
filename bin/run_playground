@@ -6,5 +6,5 @@ require "active_record_playground_runner"
 
 path = ARGV[0]
 code = File.read(path)
-runner = ActiveRecordPlaygroundRunner::Playground.new(path) { eval(code) }
+runner = ActiveRecordPlaygroundRunner::Playground.new(path) { eval(code, binding, __FILE__, __LINE__) }
 runner.setup.run.destroy
